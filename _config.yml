@@ -4,9 +4,9 @@
 # ---------------------------------------------------------------
 
 # Site
-title: Benson
+title: vSpace
 subtitle:
-description:
+description: Student in Sun Yat-sen University in China
 author: Benson Yan
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
@@ -120,7 +120,8 @@ menu:
   #categories: /categories/
   #about: /about/
   archives: /archives/
-  tags: /tags/
+  #tags: /tags/
+  #github: /github/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -141,6 +142,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  #github : github
 
 
 
@@ -212,8 +214,10 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
+    GitHub: https://github.com/YanB25
+    School: http://www.sysu.edu.cn/2012/en/index.htm
 
 
 # Social Links Icons
@@ -228,6 +232,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  School: university
 
 
 # Sidebar Avatar
@@ -550,7 +555,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
