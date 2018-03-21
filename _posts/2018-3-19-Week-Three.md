@@ -53,7 +53,7 @@ for test_fruit in test_lists:
         print('oh, you like {} !'.format(test_fruit))
 ```
 
-# 5-8至5-10
+## 5-8至5-10
 ``` python
 # 5-8
 ls = ['admin', 'bens', 'walker', 'David', 'Sandy']
@@ -72,12 +72,74 @@ else:
 user = ['admin', 'bens', 'walker', 'David', 'Sandy']
 other_user = ['admin', 'Kerry', 'Lurra', 'Binchy', 'David']
 for new_user in other_user:
-    if new_user in user:
+    if new_user.lower() in [i.lower() for i in user]:
         print('has been used!')
     else:
         user.append(new_user)
+
+# 5-11
+ls = [i for i in range(1, 10)]
+for item in ls:
+    if item == 1:
+        print("1st)
+    elif item == 2:
+        print("2nd)
+    elif item == 3:
+        print("3nd")
+    else:
+        print("{}th".format(item))
 ```
+# Chp 6
+## 6-1 ~ 6-
+``` python
+# 6-1
+person = {
+    'first_name': 'Bin',
+    'last_name': 'Yan',
+    'age': 20,
+    'city': 'Beijing'
+}
+for key in person:
+    print(key, person[key])
 
+# 6-2
+obj = {
+    'Sandy': 4,
+    'Lolla': 2,
+    'Bull': 3,
+    'King': 5,
+    'Tang': 1
+}
+for name in obj:
+    print(name, obj[name])
 
+# 6-3
+obj = {
+    'for': 'for loop',
+    'if': 'condition',
+    'function': 'a map',
+    'class': 'template for object',
+    'array': 'continueous area for elements'
+}
+for kw in obj:
+    print("{} : {}".format(kw, obj[kw]))
 
+# 6-4
+# The solution is the same as 6-3
+
+# 6-7
+def getPerson(firstname, lastname, age, city):
+    return {
+        'firstname': firstname,
+        'lastname': lastname,
+        'age': age,
+        'city': city
+    }
+p1 = getPerson('Larry', 'lo', 19, 'Beijing')
+p2 = getPerson('Sandy', 'Huang', 20, 'Shandong')
+persons = [p1, p2]
+for person in persons:
+    for key in person:
+        print(key, person[key])
+    print()
 ```
