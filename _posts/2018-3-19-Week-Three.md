@@ -90,7 +90,7 @@ for item in ls:
         print("{}th".format(item))
 ```
 # Chp 6
-## 6-1 ~ 6-
+## 6-1 ~ 6-7
 ``` python
 # 6-1
 person = {
