@@ -56,4 +56,65 @@ print('done!')
 for sand in finished_sandwich:
     print('we have {}'.format(sand))
 
+# 7-7
+while True:
+    pass
+
+```
+
+# Chp 8
+``` python
+# 8-1
+def display_message():
+    print('I am learning function！‘)
+
+display_message()
+
+# 8-2
+def favourite_book(title):
+    print("my favourite book is {}".format(title))
+favourite_book("Harry Poter")
+
+# 8-3
+def make_shirt(size, label):
+    print('the size is {} and label is {}'.format(size, label))
+make_shirt('M', 'hello world')
+make_shirt(label="Show me your code", size="XL")
+
+# 8-4
+def make_shirt(size="L", label="I love Python"):
+    print('the size is {} and label is {}'.format(size, label))
+make_shirt()
+make_shirt(size="M")
+make_shirt(label="other")
+
+# 8-5
+def describe_city(city, contry="china"):
+    print("{} is in {}".format(city, contry))
+describe_city('Beijing')
+describe_city('Guangzhou')
+describe_city('Texas')
+
+# 8-6
+def city_country(city, country):
+    print("{}, {}".format(city, country))
+city_country('Beijing', 'China')
+city_country('Shanghai', 'China')
+city_country('Shandong', 'China')
+
+# 8-7
+def make_album(singer, song):
+    return {singer: song}
+print(make_album('Liu Ruoying', 'Weilai'))
+
+# 8-8
+dic = {}
+while True:
+    singer = input('enter singer name(enter q to quit)  ')
+    if (singer == 'q'):
+        break
+    song = input('enter song:  ')
+    dic[singer] = song
+print(dic)
+
 ```
