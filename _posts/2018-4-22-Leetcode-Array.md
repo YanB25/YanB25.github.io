@@ -1,5 +1,5 @@
 ---
-title: Week One Assignment
+title: Leetcode Array
 categories: Assignment
 date: 2018-03-07 16:46:00 +0800
 published: true

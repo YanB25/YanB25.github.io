@@ -3,7 +3,7 @@ title: Latex Snippet
 categories: Latex
 tag: Snippet
 date: 2017-12-18 20:36:00 +0800
-published: false
+published: true
 
 ---
 

@@ -3,7 +3,7 @@ title: Prototype Chain in Javascript
 categories: language detail
 tag: javascript
 date: 2017-12-03 16:39:00 +0800
-published: false
+published: true
 
 ---
 This article gives a thorough explanation on prototype chain. I assume the reader has a grasp of basic grammar in javascript and knowledge of `object` and `function`.   

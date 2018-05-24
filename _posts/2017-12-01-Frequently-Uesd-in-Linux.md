@@ -3,7 +3,7 @@ title: Shell Basic
 categories: Linux
 tag: shell
 date: 2017-12-01 16:39:00 +0800
-published: false
+published: true
 
 ---
 # Define a Variable
