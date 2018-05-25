@@ -218,6 +218,7 @@ social:
   #LinkLabel: Link
     GitHub: https://github.com/YanB25
     School: http://www.sysu.edu.cn/2012/en/index.htm
+    She: http://joanne.top
 
 
 # Social Links Icons
@@ -233,6 +234,7 @@ social_icons:
   Twitter: twitter
   Weibo: weibo
   School: university
+  She: heart
 
 
 # Sidebar Avatar
