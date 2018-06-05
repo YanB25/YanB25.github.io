@@ -84,19 +84,34 @@ $$\vec b = (X^TX)^{-1}X^T \cdot \vec y$$
 shows a histogram of z (with 25 bins), along with an estimate for the density, using a Gaussian kernel
 density estimator (see scipy.stats). See Figure 2 for an example plot.
 
-//TODO:
 ``` python
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 mu, sigma = 0, 1
 x = np.random.normal(mu, sigma, 10000)
-plt.hist(x, 25)
+plt.hist(x, 25, normed=True)
 kernel = stats.gaussian_kde(x)
-sample_x = np.arange(-3, 3, 0.001)
+sample_x = np.arange(-3, 3, 0.01)
 xs = kernel.evaluate(sample_x)
 print(xs)
 print(np.sum(xs))
-plt.plot(sample_x, np.multiply(xs , 5000))
+plt.plot(sample_x, xs)
 plt.show()
 ```
+本题在产生随机的高斯分布后，使用`plt.hist`函数产生柱形图。
+``` python
+plt.hist(x, 25, normed=True)
+```
+第一个参数传递进数据集。第二个参数传递分成的组(bins)的个数。第三个参数设置`normed`为`True`,会对数据结果作规范化。
+
+``` python
+kernel = stats.gaussian_kde(x)
+xs = kernel.evaluate(sample_x)
+```
+上述代码的第一行使用`scipy.stats.gaussion_kde`工具来估计概率密度。传入的参数是数据集。  
+`kernel.evaluate`对输入的`x`，计算其相应位置的概率密度。  
+随后的`plt.plot`函数把概率密度曲线画出来。  
+
+可以看到，在数据量较大（10000）时，柱状体和曲线大致是一致的。
+![](../_data/Figure_3.png)
