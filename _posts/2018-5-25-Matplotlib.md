@@ -17,11 +17,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.arange(0, 2, 0.01)
-m1 = np.power(np.sin(np.subtract(x, 2)), 2) 
-m2 = np.exp(-np.power(x, 2))
-y = np.multiply(m1, m2)
+m1 = np.sin(x-2) ** 2
+m2 = np.exp(- x ** 2)
+y = m1 * m2
 
-plt.subplots()
+fig, ax = plt.subplots()
 plt.plot(x, y)
 plt.xlabel('x')
 plt.ylabel('y')
@@ -44,22 +44,23 @@ Plot the true parameters b and estimated parameters b̂. See Figure 1 for an exa
 
 ```python
 import numpy as np
-ROW = 20
+ROW = 30
 COL = 20
 SCALE = 10
 X = SCALE * np.random.random((ROW, COL))
-X = np.matrix(X)
 b = SCALE * np.random.random(COL)
+print(b)
 b.shape = (COL, 1)
 mu, sigma = 0, 1
 z = np.random.normal(mu, sigma, ROW)
 z.shape = (ROW, 1)
-y = X * b + z
-
+y = X.dot(b) + z
 from numpy.linalg import inv
-est = inv(X.transpose() * X)  * X.transpose() * y
+est = np.dot(
+    inv(np.dot(X.transpose(), X))
+    , np.dot(X.transpose(),  y)
+)
 print(est)
-
 import matplotlib.pyplot as plt
 x = [i for i in range(COL)]
 plt.subplots()
