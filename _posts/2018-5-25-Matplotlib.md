@@ -34,7 +34,7 @@ plt.show()
 
 在求出`x`和`y`后，利用`plt.plot(x, y)`将图像画出。需要留意，最后必须用`plt.show()`，否则图像无法显示。
 
-![](../_data/Figure_1.png)
+![](/assets/images/post/Figure_1.png)
 ## Exercise 11.2: Data
 > Create a data matrix X with 20 observations of 10 variables. Generate a vector b with parameters Then
 generate the response vector y = Xb+z where z is a vector with standard normally distributed variables.
@@ -78,7 +78,7 @@ $$\vec b = (X^TX)^{-1}X^T \cdot \vec y$$
 
 第三部分是画图。由于本题要画散点，故使用`plt.scatter`函数作图。其用法与`plt.plot`类似。  
 `marker`关键字用于指定在图片中显示的符号。`label`用于显示右上角的`legend`。要显示`legend`,最后必须有`plt.legend()`，否则不会显示。`
-![](../_data/Figure_2.png)
+![](/assets/images/post/Figure_2.png)
 
 ## Exercise 11.3: Histogram and density estimation
 > Generate a vector z of 10000 observations from your favorite exotic distribution. Then make a plot that
@@ -115,4 +115,4 @@ xs = kernel.evaluate(sample_x)
 随后的`plt.plot`函数把概率密度曲线画出来。  
 
 可以看到，在数据量较大（10000）时，柱状体和曲线大致是一致的。
-![](../_data/Figure_3.png)
+![](/assets/images/post/Figure_3.png)

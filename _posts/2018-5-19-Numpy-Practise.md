@@ -33,6 +33,7 @@ B = np.matrix(B)
 上述代码用来产生`Teoplizt`矩阵.以后的文件中，只需要import`gen.py`即可
 ## ex1
 > Calculate $A + A$, $AA^T$  , $A ^TA$ and $AB$. Write a function that computes $ A(B- \lambda I) $ for any $\lambda$.
+
 ``` python
 import numpy as np
 from gen import A
@@ -51,10 +52,12 @@ print(T1)
 print(T2)
 print(prod)
 ```
+
 //TODO: lack one function
 在numpy中，转置用`matrix.transpose()`。乘法直接使用`*`即可。如此即可方便地做各类矩阵运算。
 ## ex2
 > Generate a vector b with m entries and solve Bx = b.
+
 ``` python
 import numpy as np
 from numpy.linalg import inv
@@ -66,10 +69,13 @@ b.shape = (m, 1)
 ans = inv(B) * b
 print(repr(ans))
 ```
+
 上述代码中，b是一个向量。语句
+
 ``` python
 b.shape = (m, 1)
 ```
+
 把b变为一个列向量。`b.shape`是b的一个公有成员，类型是Tuple。
 求逆的函数是`numpy.linalg.inv`
 
@@ -197,6 +203,7 @@ for idx, i in enumerate(np.arange(0, 1, 0.01)):
 function should return the closest value, not index.
 Hint: Use the built-in functionality of Numpy rather than writing code to find this value manually. In
 particular, use brackets and argmin.
+
 ``` python
 import numpy as np
 A = np.arange(40)
@@ -209,6 +216,7 @@ def NearestNeighbour(A, z):
 
 print(NearestNeighbour(A, z))
 ```
+
 同样利用`numpy`内置支持的矩阵运算。
 `np.subtract`会将向量（矩阵）中的每个元素都减去同一个值。
 `np.argmin`返回向量（矩阵）中最小的元素的坐标。
