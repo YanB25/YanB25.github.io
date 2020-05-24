@@ -2,6 +2,7 @@
 published: true
 categories: Assignment
 date: '2020-05-24 19:18:00 +0800'
+title: Bug Summary
 ---
 
 这篇blog会长期更新。我会在其中更新一些让我印象深刻的bug。
@@ -53,3 +54,31 @@ Program crashes @ `AsyncFunction`. That's all gdb can provide.
 AsyncFunction(ctx->a, ctx->b, new Callback(ctx.get());
 ctx.release();
 ```
+
+## Race Condition
+
+Race condition may be very difficult to detect. Most RC drive the program into an unexpected state, and the root cause (bug) may locate far away when user find a wrong result.
+
+### Background
+
+``` c++
+std::atomic<bool> stop_{true};
+std::thread loop([] {
+  while (!stop_.load())
+  {
+    std::cout << "I am working" << std::endl;
+    sleep(1);
+  }
+});
+stop_.store(false);
+```
+
+### Symptom
+
+We expect to see an output every second. However, *sometimes* users may find there's no output at all.
+
+### Bug & Solution
+
+Solution: just put `stop_.store(true)` before spawning the thread.
+
+In a complex program where each functionality is layered, this kind of bug is difficult to detect and locate.
